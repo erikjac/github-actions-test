@@ -27,7 +27,7 @@ jobs:
         env:
             FOO: "FOO=bar"
       - name: Cat .env file
-        run: cat "HOME/.env"
+        run: cat "$HOME/.env"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
