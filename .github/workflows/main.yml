@@ -28,6 +28,9 @@ jobs:
             FOO: "FOO=bar"
       - name: Cat .env file
         run: cat "$HOME/.env"
+      - name: Print python
+        run: ./bin/python_print.pu
+        shell: python
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
