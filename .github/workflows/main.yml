@@ -25,6 +25,8 @@ jobs:
       - name: Python step
         run: ./.github/scripts/hello-world.py
         shell: python
+        env: 
+            env_FOO: ${{ secrets.FOO }}
 
       - name: Create env file
         run: ./bin/env_file.sh
