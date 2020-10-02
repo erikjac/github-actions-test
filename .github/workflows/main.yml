@@ -33,8 +33,8 @@ jobs:
       - uses: ./.github/actions/env-file
         with:
             envs: FOO=hello,
-                  BAR=\"HELLO\, WORLD\"
-                  BAZ=${{ secrets.FOO }}
+                  BAR=\"HELLO\, WORLD\",
+                  BAZ=${{ secrets.FOO }},
                   FOOBAR=${{ secrets.BAR }}
         #- name: Create env file
         #  run: ./bin/env_file.sh
