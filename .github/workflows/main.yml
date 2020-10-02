@@ -32,10 +32,11 @@ jobs:
 
       - uses: ./.github/actions/env-file
         with:
-            envs: FOO=hello,
-                  BAR=\"HELLO\, WORLD\",
-                  FOOBAR=${{ secrets.BAR }},
-                  BAZ=${{ secrets.FOO }},
+            envs: 
+                FOO=hello,
+                BAR=\"HELLO\, WORLD\",
+                FOOBAR=${{ secrets.BAR }},
+                BAZ=${{ secrets.FOO }},
         #- name: Create env file
         #  run: ./bin/env_file.sh
         #  shell: bash
