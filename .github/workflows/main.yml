@@ -22,6 +22,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Python step
+        run: print("HELLO WORLD")
+        shell: python
+
       - name: Create env file
         run: ./bin/env_file.sh
         env:
@@ -40,6 +44,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - id: myaction
-        name: Composite action
-        uses: actions/hello-world@v1
+          #- id: myaction
+          #  name: Composite action
+          #  uses: actions/hello-world@v1
