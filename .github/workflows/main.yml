@@ -33,7 +33,7 @@ jobs:
       - uses: ./.github/actions/env-file
         with:
             envs: FOO=hello,
-                  BAR=\"HELLO\, WORLD\"
+            BAR=\"HELLO\, WORLD\"
         #- name: Create env file
         #  run: ./bin/env_file.sh
         #  shell: bash
