@@ -1,0 +1,13 @@
+name: "Env file"
+description: "Will create an env file from the input and write to $HOME/.env"
+input:
+    envs:
+        description: "KEY=VALUE,..."
+        default: ""
+
+runs:
+    using: "composite"
+    steps:
+        - run: $GITHUB_ACTION_PATH/main.py "${{ inputs.envs}}" > $HOME/.env
+          shell: bash
+
