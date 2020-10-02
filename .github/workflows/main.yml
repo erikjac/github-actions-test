@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Python step
-        run: ./.github/scripts/hello-world.py
+        run: .github/scripts/hello-world.py
         shell: python
 
       - name: Create env file
