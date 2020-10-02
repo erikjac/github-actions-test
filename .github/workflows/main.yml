@@ -22,14 +22,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Python step
-        run: ./.github/scripts/hello-world.py
-        shell: python
-        env: 
-            env_FOO: ${{ secrets.FOO }}
+        #- name: Python step
+        #  run: ./.github/scripts/hello-world.py
+        #  shell: python
 
       - name: Create env file
         run: ./bin/env_file.sh
+        shell: bash
         env:
             env_FOO: ${{ secrets.FOO }}
             env_BAR: ${{ secrets.BAR }}
