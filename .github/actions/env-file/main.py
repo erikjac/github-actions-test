@@ -7,6 +7,8 @@ if len(sys.argv) == 1:
 
 envs = sys.argv[1]
 
+print("ENVS", envs)
+
 def parse_escaped_chars(env):
     return re.sub(r"\\(\"|,)",r"\1", env) 
     #return env.replace(r"\",r"")
