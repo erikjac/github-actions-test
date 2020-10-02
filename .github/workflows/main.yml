@@ -26,12 +26,16 @@ jobs:
         run: ./.github/scripts/hello-world.py
         shell: bash
 
-      - name: Create env file
-        run: ./bin/env_file.sh
-        shell: bash
-        env:
-            env_FOO: ${{ secrets.FOO }}
-            env_BAR: ${{ secrets.BAR }}
+      - uses: ./.github/actions/action.yml
+        with:
+            name: "Klas"
+
+        #- name: Create env file
+        #  run: ./bin/env_file.sh
+        #  shell: bash
+        #  env:
+        #      env_FOO: ${{ secrets.FOO }}
+        #      env_BAR: ${{ secrets.BAR }}
 
       - name: Cat .env file
         run: cat "$HOME/.env"
