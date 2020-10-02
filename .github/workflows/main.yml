@@ -37,6 +37,7 @@ jobs:
                 BAR=\"HELLO\, WORLD\",
                 FOOBAR=${{ secrets.BAR }},
                 BAZ=${{ secrets.FOO }},
+                EMPTY=
         #- name: Create env file
         #  run: ./bin/env_file.sh
         #  shell: bash
