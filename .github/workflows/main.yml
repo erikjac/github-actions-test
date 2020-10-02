@@ -40,3 +40,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - id: myaction
+        name: Composite action
+        uses: actions/hello-world@v1
