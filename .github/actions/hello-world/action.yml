@@ -13,7 +13,7 @@ runs:
     steps:
         - run: echo Hello ${{ inputs.name }}
           shell: bash
-        - run: $GITHUB_ACTION_PATH/hello-world.py ${{ inputs.name }}
+        - run: $GITHUB_ACTION_PATH/hello-world.py "${{ inputs.name }}"
           shell: bash
         - id: python
           run: print("Hello From Python")
