@@ -29,6 +29,8 @@ jobs:
       - uses: ./.github/actions/hello-world
         with:
             name: "Klas"
+        env: 
+            NAME: "Klas 2"
 
       - uses: ./.github/actions/env-file
         with:
@@ -38,12 +40,6 @@ jobs:
                 FOOBAR=${{ secrets.BAR }},
                 EMPTY=,
                 BAZ=${{ secrets.FOO }},
-        #- name: Create env file
-        #  run: ./bin/env_file.sh
-        #  shell: bash
-        #  env:
-        #      env_FOO: ${{ secrets.FOO }}
-        #      env_BAR: ${{ secrets.BAR }}
 
       - name: Cat .env file
         run: cat "$HOME/.env"
