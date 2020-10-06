@@ -28,7 +28,7 @@ jobs:
 
       - uses: ./.github/actions/hello-world
         with:
-            name: ${NAME}
+            name: "${NAME}"
         env: 
             NAME: "Klas 2"
 
