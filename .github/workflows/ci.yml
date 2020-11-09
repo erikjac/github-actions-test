@@ -19,3 +19,38 @@ jobs:
 
       - name: GITHUB_SHA
         run: echo $GITHUB_SHA
+
+      - name: Python step
+        run: ./.github/scripts/hello-world.py
+        shell: bash
+
+      - uses: ./.github/actions/hello-world
+        with:
+            name: "$NAME"
+        env: 
+            NAME: "Klas 2"
+
+      - uses: ./.github/actions/env-file
+        with:
+            envs: 
+                FOO=hello,
+                BAR=\"HELLO\, WORLD\",
+                FOOBAR=${{ secrets.BAR }},
+                EMPTY=,
+                BAZ=${{ secrets.FOO }},
+
+      - name: Cat .env file
+        run: cat "$HOME/.env"
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+          #- id: myaction
+          #  name: Composite action
+          #  uses: actions/hello-world@v1
