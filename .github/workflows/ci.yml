@@ -26,7 +26,7 @@ jobs:
 
       - name: Install pubsub emulator
         run: |- 
-            gcloud components install pubsub-emulator -quiet 
+            gcloud components install pubsub-emulator --quiet 
 
       - name: Run pubsub emulator
         run: |-
