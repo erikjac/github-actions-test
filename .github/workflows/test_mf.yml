@@ -28,7 +28,7 @@ jobs:
     if: ${{ github.event_name == 'release' && github.event.action == 'prereleased' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: action/checkout@v3
+    - uses: actions/checkout@v3
     - name: Prerelease
       run: echo "This should only run when a prerelease are created"
     - name: Dump context
@@ -39,7 +39,7 @@ jobs:
     if: ${{ github.event_name == 'release' && github.event.action == 'released' }}
     runs-on: ubuntu-latest
     steps:
-    - uses: action/checkout@v3
+    - uses: actions/checkout@v3
     - name: Release
       run: echo "This should only run when a prerelease are created"
     - name: Dump context
