@@ -6,8 +6,6 @@ name: Test Mf
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
   release:
     types: [prereleased, released]
 
@@ -15,16 +13,35 @@ permissions:
   contents: read
 
 jobs:
-  build:
-
+  push_master:
+    if: ${{ github.event_name == "push" }}
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
+    - name: Push on Master
+      run: echo "This should only run on push on master"
+    - name: Dump context
+      env: 
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo $GITHUB_CONTEXT
+  prereleased:
+    if: ${{ github.event_name == "release" && github.event.action == "prereleased"}}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: action/checkout@v3
+    - name: Create Pre release
+      run: echo "This should only run when a prerelease are created"
+    - name: Dump context
+      env: 
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo $GITHUB_CONTEXT
+  released:
+    if: ${{ github.event_name == "release" && github.event.action == "released"}}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: action/checkout@v3
+    - name: Create Pre release
+      run: echo "This should only run when a prerelease are created"
     - name: Dump context
       env: 
         GITHUB_CONTEXT: ${{ toJson(github) }}
