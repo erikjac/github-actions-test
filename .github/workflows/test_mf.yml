@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Push on Master
+    - name: Push
       run: echo "This should only run on push on master"
     - name: Dump context
       env: 
@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: action/checkout@v3
-    - name: Create Pre release
+    - name: Prerelease
       run: echo "This should only run when a prerelease are created"
     - name: Dump context
       env: 
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: action/checkout@v3
-    - name: Create Pre release
+    - name: Release
       run: echo "This should only run when a prerelease are created"
     - name: Dump context
       env: 
